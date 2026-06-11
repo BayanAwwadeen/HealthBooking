@@ -50,9 +50,8 @@ export default {
     fetch("https://2sacuj2rj4.execute-api.eu-north-1.amazonaws.com/prod/slots")
       .then(res => res.json())
       .then(data => {
-        const parsed = JSON.parse(data.body);
-        this.slots = parsed.filter(s => !s.isBooked).map(s => s.slot);
-      });
+  this.slots = data.filter(s => !s.isBooked).map(s => s.slot);
+});
   },
   methods: {
     submitAppointment() {
