@@ -61,10 +61,9 @@ export default {
     fetchAppointments() {
       fetch("https://2sacuj2rj4.execute-api.eu-north-1.amazonaws.com/prod/appointments")
         .then(res => res.json())
-        .then(data => {
-          const parsed = JSON.parse(data.body);
-          this.appointments = parsed;
-        });
+      .then(data => {
+  this.appointments = data;
+});
     },
     updateStatus(appointment, newStatus) {
       // Log the full appointment object and its ID
